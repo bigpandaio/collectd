@@ -3142,9 +3142,9 @@ then
   SAVE_LDFLAGS="$LDFLAGS"
 dnl ARCHFLAGS="" -> disable multi -arch on OSX (see Config_heavy.pl:fetch_string)
   PERL_CFLAGS=`ARCHFLAGS="" $perl_interpreter -MExtUtils::Embed -e ccopts`
-  PERL_LDFLAGS=`ARCHFLAGS="" $perl_interpreter -MExtUtils::Embed -e ldopts`
+  PERL_LIBS=`ARCHFLAGS="" $perl_interpreter -MExtUtils::Embed -e ldopts`
   CFLAGS="$CFLAGS $PERL_CFLAGS"
-  LDFLAGS="$LDFLAGS $PERL_LDFLAGS"
+  LIBS="$LIBS $PERL_LIBS"
 
   AC_CACHE_CHECK([for libperl],
     [c_cv_have_libperl],
